@@ -262,12 +262,15 @@
             color: #ff6b35;
         }
 
-        /* Photo Gallery Styles */
+        /* Updated Gallery Styles */
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
             margin-top: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .gallery-item {
@@ -278,7 +281,7 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 107, 53, 0.2);
             transition: all 0.3s ease;
-            cursor: pointer;
+            aspect-ratio: 1;
         }
 
         .gallery-item:hover {
@@ -289,13 +292,13 @@
 
         .gallery-item img {
             width: 100%;
-            height: 200px;
+            height: 100%;
             object-fit: cover;
             transition: transform 0.3s ease;
         }
 
         .gallery-item:hover img {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
 
         .gallery-item .overlay {
@@ -445,8 +448,8 @@
             }
 
             .gallery {
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-                gap: 1rem;
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
 
             .footer-content {
@@ -457,6 +460,12 @@
             .modal-nav {
                 font-size: 18px;
                 padding: 8px 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -635,21 +644,20 @@
         const galleryPhotos = [
             {
                 src: "assets/image (3).png",
-                caption: ""
+                caption: "Flight Training Scene"
             },
             {
                 src: "assets/image (2).png",
-                caption: ""
+                caption: "Helicopter Formation"
             },
             {
                 src: "assets/IMG_20250626_175638.jpg",
-                caption: ""
+                caption: "Advanced Maneuvers"
             },
             {
                 src: "assets/IMG_20250619_231542.jpg",
-                caption: ""
+                caption: "Combat Training"
             }
-           
         ];
 
         
