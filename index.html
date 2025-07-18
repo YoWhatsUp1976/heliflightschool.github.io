@@ -598,7 +598,30 @@
         <div class="container">
             <h2 class="animate-on-scroll">Gallery</h2>
             <div class="gallery" id="photo-gallery">
-                
+                <div class="gallery-item animate-on-scroll">
+                    <img src="assets/image (3).png" alt="Flight Training Scene">
+                    <div class="overlay">
+                        <div class="caption">Flight Training Scene</div>
+                    </div>
+                </div>
+                <div class="gallery-item animate-on-scroll">
+                    <img src="assets/image (2).png" alt="Helicopter Formation">
+                    <div class="overlay">
+                        <div class="caption">Helicopter Formation</div>
+                    </div>
+                </div>
+                <div class="gallery-item animate-on-scroll">
+                    <img src="assets/IMG_20250626_175638.jpg" alt="Advanced Maneuvers">
+                    <div class="overlay">
+                        <div class="caption">Advanced Maneuvers</div>
+                    </div>
+                </div>
+                <div class="gallery-item animate-on-scroll">
+                    <img src="assets/IMG_20250619_231542.jpg" alt="Combat Training">
+                    <div class="overlay">
+                        <div class="caption">Combat Training</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -644,37 +667,28 @@
         const galleryPhotos = [
             {
                 src: "assets/image (3).png",
-                caption: "Flight Training Scene"
+                caption: "Image"
             },
             {
                 src: "assets/image (2).png",
-                caption: "Helicopter Formation"
+                caption: "Image"
             },
             {
                 src: "assets/IMG_20250626_175638.jpg",
-                caption: "Advanced Maneuvers"
+                caption: "Image"
             },
             {
                 src: "assets/IMG_20250619_231542.jpg",
-                caption: "Combat Training"
+                caption: "Image"
             }
         ];
 
         
         function initGallery() {
-            const galleryContainer = document.getElementById('photo-gallery');
+            const galleryItems = document.querySelectorAll('.gallery-item');
             
-            galleryPhotos.forEach((photo, index) => {
-                const galleryItem = document.createElement('div');
-                galleryItem.className = 'gallery-item animate-on-scroll';
-                galleryItem.innerHTML = `
-                    <img src="${photo.src}" alt="${photo.caption}" onerror="this.style.display='none'">
-                    <div class="overlay">
-                        <div class="caption">${photo.caption}</div>
-                    </div>
-                `;
-                galleryItem.addEventListener('click', () => openModal(index));
-                galleryContainer.appendChild(galleryItem);
+            galleryItems.forEach((item, index) => {
+                item.addEventListener('click', () => openModal(index));
             });
         }
 
