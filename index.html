@@ -589,7 +589,7 @@
         <div class="container">
             <h2 class="animate-on-scroll">Gallery</h2>
             <div class="gallery" id="photo-gallery">
-                <!-- Photos will be dynamically loaded here -->
+                
             </div>
         </div>
     </section>
@@ -607,7 +607,7 @@
         </div>
     </section>
 
-    <!-- Modal for full-size images -->
+    
     <div id="imageModal" class="modal">
         <span class="close">&times;</span>
         <button class="modal-nav prev">&#10094;</button>
@@ -631,7 +631,7 @@
     </footer>
 
     <script>
-        // EDIT THIS ARRAY TO ADD/REMOVE PHOTOS
+        
         const galleryPhotos = [
             {
                 src: "assets/image (3).png",
@@ -646,13 +646,13 @@
                 caption: ""
             },
             {
-                src: "assets/photo4.jpg",
+                src: "assets/IMG_20250619_231542.jpg",
                 caption: ""
             }
            
         ];
 
-        // Initialize gallery
+        
         function initGallery() {
             const galleryContainer = document.getElementById('photo-gallery');
             
@@ -670,7 +670,7 @@
             });
         }
 
-        // Modal functionality
+        
         let currentImageIndex = 0;
         const modal = document.getElementById('imageModal');
         const modalImage = document.getElementById('modalImage');
@@ -701,19 +701,19 @@
             modalImage.alt = galleryPhotos[currentImageIndex].caption;
         }
 
-        // Event listeners
+        
         closeBtn.addEventListener('click', closeModal);
         prevBtn.addEventListener('click', showPrevImage);
         nextBtn.addEventListener('click', showNextImage);
 
-        // Close modal when clicking outside the image
+       
         modal.addEventListener('click', (e) => {
             if (e.target === modal) {
                 closeModal();
             }
         });
 
-        // Keyboard navigation
+        
         document.addEventListener('keydown', (e) => {
             if (modal.style.display === 'block') {
                 if (e.key === 'Escape') closeModal();
@@ -722,7 +722,7 @@
             }
         });
         
-        // Smooth scrolling for navigation links
+        
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -736,7 +736,7 @@
             });
         });
 
-        // Animation on scroll
+        
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -754,7 +754,7 @@
             observer.observe(el);
         });
 
-        // Header background change on scroll
+        
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
@@ -764,7 +764,7 @@
             }
         });
 
-        // Animated particles
+        
         const particles = document.querySelectorAll('.particle');
         particles.forEach((particle, index) => {
             particle.style.top = Math.random() * 100 + '%';
@@ -772,7 +772,7 @@
             particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
         });
 
-        // Initialize gallery when page loads
+        
         document.addEventListener('DOMContentLoaded', initGallery);
     </script>
 </body>
